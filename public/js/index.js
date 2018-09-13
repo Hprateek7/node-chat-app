@@ -1,18 +1,13 @@
 var socket = io();
+
 socket.on('connect', function () {
     console.log('Connected to server');
-
-    socket.emit('createMsg', {
-        to: 'Mehul',
-        text: 'Bhai paise nhi h',
-    });
-
 });
 
 socket.on('disconnect', function () {
-    console.log('Disonnected from server');
+    console.log('Disconnected from server');
 });
 
-socket.on('newMsg', function (msg) {
-    console.log('New Message', msg);
+socket.on('newMessage', function (message) {
+    console.log('newMessage', message);
 });
